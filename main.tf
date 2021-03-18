@@ -33,7 +33,7 @@ resource "random_pet" "petname" {
 
 resource "aws_s3_bucket" "demo" {
   bucket = "${var.prefix}-${random_pet.petname.id}"
-  acl    = "public-read"
+  acl    = "public-read-write"
   tags = {
     Name        = "HashiCorp"
     Environment = "Learn"
